@@ -7,7 +7,7 @@ class App extends Component {
     super(props);
     this.state = {
       isVisible : true,
-      bingmapKey: "AksOASfzdybmndjlOxhWnhZaNtzG5CMgqUFIgB5Ji8W6Gr748WQL5mijk5w4OmDD", //Don't use this key in your environment.
+      bingmapKey: "AuMaHi1MAXAciqXe2eAYNSGq-2S52QQGPnbjp19MSG0j2G2lozrh5A7hRTqkMNEO", //Don't use this key in your environment.
       infoboxes : [
         {
           "location":[13.0827, 80.2707], "option":{ title: 'Chennai', description: '...' }, "addHandler": {"type" : "click", callback: this.callBackMethod}
@@ -49,10 +49,20 @@ class App extends Component {
       },
       searchInput: "",
       getLocationHandledData: "",
-      polyline: {
-        "location": [[13.0827, 80.2707],[13.0827, 80.1907]],
-        "option": { strokeColor: 'blue', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
-      },
+      // polyline: {
+      //   "location": [[13.0827, 80.2707],[13.0827, 80.1907]],
+      //   "option": { strokeColor: 'blue', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
+      // },
+      polylines: [
+        {
+          "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
+          "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
+        },
+        {
+          "location": [[13.0800, 80.2800],[13.0500, 80.2800]],
+          "option": { strokeColor: 'red'}
+        }
+      ],
       directions: {
         "renderOptions": {"itineraryContainer": "itineraryContainer" },
         "requestOptions": {"routeMode": "driving", "maxRoutes": 2},
@@ -111,10 +121,20 @@ class App extends Component {
           entityType: 'PopulatedPlace'
         }
       },
-      polyline: {
-        "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
-        "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
-      },
+      // polyline: {
+      //   "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
+      //   "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
+      // },
+      polylines: [
+        {
+          "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
+          "option": { strokeColor: 'blue', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
+        },
+        {
+          "location": [[13.0800, 80.2800],[13.0500, 80.2800]],
+          "option": { strokeColor: 'blue'}
+        }
+      ],
       directions: {
         "inputPanel": "inputPanel",
         "renderOptions": {"itineraryContainer": "itineraryContainer" },
@@ -277,13 +297,13 @@ class App extends Component {
             </ReactBingmaps>
           </div>
           <div className = "map-one">
-          <u>Bingmaps with Polyline</u>
+          <u>Bingmaps with Polylines</u>
             <ReactBingmaps
               id = "nine" 
               className = "customClass"
               center = {[13.0827, 80.2707]}
               bingmapKey = {this.state.bingmapKey}
-              polyline = {this.state.polyline}
+              polylines = {this.state.polylines}
             > 
             </ReactBingmaps>
           </div><div className = "map-two">
