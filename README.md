@@ -20,7 +20,7 @@ $ npm i git+https://github.com/tuanpq1998/react-bingmaps.git
 <ReactBingmaps
   bingmapKey = "[YourBingMapsKey]"
   ...
-  polyline = {
+  polylines = {
   	[{
       "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
       "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
