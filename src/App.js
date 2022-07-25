@@ -130,10 +130,10 @@ class App extends Component {
           "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
           "option": { strokeColor: 'blue', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
         },
-        {
-          "location": [[13.0800, 80.2800],[13.0500, 80.2800]],
-          "option": { strokeColor: 'blue'}
-        }
+        // {
+        //   "location": [[13.0800, 80.2800],[13.0500, 80.2800]],
+        //   "option": { strokeColor: 'blue'}
+        // }
       ],
       directions: {
         "inputPanel": "inputPanel",
