@@ -49,20 +49,20 @@ class App extends Component {
       },
       searchInput: "",
       getLocationHandledData: "",
-      // polyline: {
-      //   "location": [[13.0827, 80.2707],[13.0827, 80.1907]],
-      //   "option": { strokeColor: 'blue', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
-      // },
-      polylines: [
-        {
-          "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
-          "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
-        },
-        {
-          "location": [[13.0800, 80.2800],[13.0500, 80.2800]],
-          "option": { strokeColor: 'red'}
-        }
-      ],
+      polyline: {
+        "location": [[13.0827, 80.2707],[13.0827, 80.1907]],
+        "option": { strokeColor: 'blue', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
+      },
+      // polylines: [
+      //   {
+      //     "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
+      //     "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
+      //   },
+      //   {
+      //     "location": [[13.0800, 80.2800],[13.0500, 80.2800]],
+      //     "option": { strokeColor: 'red'}
+      //   }
+      // ],
       directions: {
         "renderOptions": {"itineraryContainer": "itineraryContainer" },
         "requestOptions": {"routeMode": "driving", "maxRoutes": 2},
@@ -121,20 +121,24 @@ class App extends Component {
           entityType: 'PopulatedPlace'
         }
       },
-      // polyline: {
-      //   "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
-      //   "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
-      // },
-      polylines: [
-        {
-          "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
-          "option": { strokeColor: 'blue', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
-        },
+      polyline: {
+        "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
+        "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] },
+        "addHandler" : {
+          type : "mouseover",
+          callback : this.handlePolyLineClick,
+        }
+      },
+      // polylines: [
+      //   {
+      //     "location": [[13.0827, 80.2707],[13.0527, 80.2707]],
+      //     "option": { strokeColor: 'blue', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
+      //   },
         // {
         //   "location": [[13.0800, 80.2800],[13.0500, 80.2800]],
         //   "option": { strokeColor: 'blue'}
         // }
-      ],
+      // ],
       directions: {
         "inputPanel": "inputPanel",
         "renderOptions": {"itineraryContainer": "itineraryContainer" },
@@ -153,6 +157,10 @@ class App extends Component {
       }
     })
   }
+  handlePolyLineClick() {
+    console.log("callback!");
+  }
+
   handleSubmit(event){
     if(this.state.searchInput !== null && this.state.searchInput !== ""){
       this.setState({
@@ -303,7 +311,7 @@ class App extends Component {
               className = "customClass"
               center = {[13.0827, 80.2707]}
               bingmapKey = {this.state.bingmapKey}
-              polylines = {this.state.polylines}
+              polyline = {this.state.polyline}
             > 
             </ReactBingmaps>
           </div><div className = "map-two">
