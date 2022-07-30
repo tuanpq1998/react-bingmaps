@@ -15,7 +15,7 @@ class App extends Component {
       ],
       pushPins : [
         {
-          "location":[13.0827, 80.2707], "option":{ color: 'red' }, "addHandler": {"type" : "click", callback: this.callBackMethod }
+          "location":[13.0827, 80.2707], "option":{ color: 'blue' , draggable : true}, "addHandler": {"type" : "drag", callback: this.callBackDragMethod.bind(this) }
         }
       ],
       regularPolygons:[
@@ -76,6 +76,10 @@ class App extends Component {
             ]
       }
     }
+  }
+
+  callBackDragMethod(location) {
+    console.log(location);
   }
   changeState(){
     this.setState({
